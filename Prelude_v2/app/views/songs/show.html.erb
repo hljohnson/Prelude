@@ -45,15 +45,15 @@
     </div>
   </div>
 
-  <p>
-    <strong>Download Chart:</strong>
-    <%= link_to @song.chart.file.filename, @song.chart_url %>
-  </p>
+<p>
+  <strong>Download Chart:</strong>
+  <%= link_to @song.chart.file.filename, @song.chart_url %>
+</p>
 
-  <p>
-    <strong>Download MP3:</strong>
-    <%= link_to @song.mp3, @song.mp3_url %>
-  </p>
+<p>
+  <strong>Download MP3:</strong>
+  <%= link_to @song.mp3.file.filename, @song.mp3_url %>
+</p>
 
 <%= link_to 'Edit', edit_song_path(@song.id) %> |
 <%= link_to 'Back', songs_path %>
