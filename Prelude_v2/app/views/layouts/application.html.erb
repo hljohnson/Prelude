@@ -1,14 +1,69 @@
 <!DOCTYPE html>
 <html>
 <head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+
   <title>PreludeV2</title>
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
-</head>
-<body>
 
-<%= yield %>
+  <!-- javascript for jplayer -->
+  <script type="text/javascript" src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
+  <script type="text/javascript" src="/assets/javascripts/jquery.min.js"></script>
+  <script type="text/javascript" src="/assets/javascripts/jquery.jplayer.min.js"></script>
+
+</head>
+<body class = "nonadmin-home">
+
+<!-- Navbar -->
+<nav>
+  <div class = "container">
+
+      <!-- Prelude logo -->
+      <div class="navbar-header">
+        <h4>
+          <%= link_to('Prelude', root_path) %>
+        </h4>
+      </div>
+
+      <div>
+        <ul class="nav navbar navbar-right">
+          <% if user_signed_in? %>
+            <li class = "button">
+                <%= link_to('Home', root_path) %>
+            </li>
+            <li class = "button">
+                <%= link_to('Logout', destroy_user_session_path, :method => :delete) %>
+            </li>
+          <% else %>
+            <li class = "button">
+                <%= link_to('Login', new_user_session_path) %>
+            </li>
+          <% end %>
+        </ul>
+    </div>
+  </div>
+</nav>
+<!-- /Navbar -->
+
+<div class = "index-container">
+  <%= yield %>
+</div>
+
+<!-- Bootstrap core JavaScript
+================================================== -->
+<!-- Placed at the end of the document so the pages load faster -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+<script src="../../dist/js/bootstrap.min.js"></script>
+<!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+<script src="../../assets/js/ie10-viewport-bug-workaround.js"></script>
+<script type = "text/javascript" src = "javascript/jquery.jplayer.js"></script>
+<script type = "text/javascript" src = "javascript/song.js"></script>
+
 
 </body>
 </html>

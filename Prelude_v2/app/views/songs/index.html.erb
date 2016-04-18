@@ -1,0 +1,32 @@
+<p id="notice"><%= notice %></p>
+
+<h1><%= @current_user.band.name %></h1>
+<table class="table" id = "modified-table">
+  <thead>
+    <tr>
+      <th>Title</th>
+      <th>Artist</th>
+      <th>Chart</th>
+      <th>MP3</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @songs.each do |song| %>
+      <tr>
+        <td><%= link_to song.name, song %></td>
+        <td><%= link_to song.artist, song %></td>
+        <td><%= link_to "Download", song.chart_url %></td>
+        <td><%= link_to "Download", song.mp3_url %></td>
+        <!--<td><%= link_to 'Show', song %></td>
+        <td><%= link_to 'Edit', edit_song_path(song) %></td>
+        <td><%= link_to 'Destroy', song, method: :delete, data: { confirm: 'Are you sure?' } %></td>-->
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<h4><%= link_to 'Add Song', new_song_path %></h4>
