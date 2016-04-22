@@ -1,3 +1,31 @@
+<script>
+  $(document).ready(function(){
+
+    $("#jPlayer-player").jPlayer({
+      ready: function (event) {
+        $(this).jPlayer("setMedia", {
+          title: "Bubble",
+          mp3: "http://jplayer.org/audio/m4a/Miaow-07-Bubble.m4a",
+          oga: "http://jplayer.org/audio/ogg/Miaow-07-Bubble.ogg"
+        });
+      },
+      swfPath: "javascript",
+      supplied: "mp3, oga",
+      wmode: "window",
+      useStateClassSkin: true,
+      autoBlur: false,
+      smoothPlayBar: true,
+      keyEnabled: true,
+      remainingDuration: true,
+      toggleDuration: true
+    });
+
+  });
+  </script>
+
+
+
+
 <p id="notice"><%= notice %></p>
 
 <p>
@@ -47,12 +75,20 @@
 
 <p>
   <strong>Download Chart:</strong>
-  <%= link_to @song.chart.file.filename, @song.chart_url %>
+  <% if @song.chart.file %>
+    <%= link_to @song.chart.file.filename, @song.chart_url %>
+  <% else %>
+    No Chart Uploaded
+  <% end %>
 </p>
 
 <p>
   <strong>Download MP3:</strong>
-  <%= link_to @song.mp3.file.filename, @song.mp3_url %>
+  <% if @song.mp3.file %>
+    <%= link_to @song.mp3.file.filename, @song.mp3_url %>
+  <% else %>
+    No MP3 Uploaded
+  <% end %>
 </p>
 
 <%= link_to 'Edit', edit_song_path(@song.id) %> |

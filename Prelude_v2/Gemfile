@@ -50,3 +50,4 @@ end
 gem 'devise'
 # Carrier Wave provides a simple and flexible way to upload files from Ruby applications
 gem 'carrierwave'
+gem 'fog'

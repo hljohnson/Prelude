@@ -17,6 +17,10 @@ p.alert, .notice {
   background: white;
 }
 
+p h2 {
+  font-size: 4px;
+}
+
 div h2 {
   font-size: 55px;
   color: black;
