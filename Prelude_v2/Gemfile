@@ -49,5 +49,8 @@ end
 # Devise is a flexible authentication solution for Rails - handles all login/signup
 gem 'devise'
 # Carrier Wave provides a simple and flexible way to upload files from Ruby applications
-gem 'carrierwave'
+gem 'carrierwave', '~> 0.10.0'
+#gem 'fog-aws'
 gem 'fog'
+
+gem 'figaro'

@@ -1,6 +1,8 @@
 class SongsController < ApplicationController
   before_action :authenticate_user!
   #before_action :set_song, only: [:show, :edit, :update, :destroy]
+  #before_action :set_s3_direct_post, only: [:new, :edit, :create, :update]
+
 
   # GET /songs
   # GET /songs.json
@@ -76,4 +78,5 @@ class SongsController < ApplicationController
     def song_params
       params.require(:song).permit(:name, :artist, :band_id, :chart, :mp3)
     end
+
 end
