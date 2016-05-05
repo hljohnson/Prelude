@@ -24,7 +24,7 @@ config/secrets.yml
 /config/application.yml
 
 # Ignore production environment
-/config/environments/production.rb
+# /config/environments/production.rb
 
 # Ignore development environment
-config/environments/development.rb
+# config/environments/development.rb
