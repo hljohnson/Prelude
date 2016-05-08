@@ -63,3 +63,5 @@ gem 'fog'
 gem 'figaro'
 
 gem 'heroku'
+
+gem 'bootstrap-sass'
