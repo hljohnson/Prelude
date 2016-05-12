@@ -32,12 +32,12 @@ div h2 {
 
 body {
   padding-top: 25px;
-  position: relative;
+    position: relative;
   /*background: transparent;*/
 
 
   /*TO DO: body.signup etc......*/
-  background: url(IMG_0100.jpg) no-repeat center center fixed;
+  background: url(IMG_8220.jpg) no-repeat center center fixed;
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
@@ -105,8 +105,7 @@ a:visited {
 
 .container {
   padding: 4px 2px 4px 4px;
-  width: 100%;
-  margin: auto;
+
 }
 
 #content-centered {

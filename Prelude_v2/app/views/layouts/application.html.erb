@@ -8,7 +8,11 @@
 
 
 </head>
-<body class = "nonadmin-home">
+<% if user_signed_in? %>
+  <body class = "nonadmin-home">
+<% else %>
+  <body>
+<% end %>
 
 <!-- Navbar -->
 <nav>
@@ -17,7 +21,7 @@
       <!-- Prelude logo -->
       <div class="navbar-header">
         <h4>
-          <%= link_to('Prelude', root_path) %>
+          <%= link_to image_tag("Prelude-logo3.png"), songs_path %>
         </h4>
       </div>
 
